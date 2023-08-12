@@ -47,12 +47,7 @@ namespace Biblioteca
 
             Emprestimo novoEmprestimo = new Emprestimo(pessoaEscolhida, livroEscolhido);
             emprestimosAtivos.Add(novoEmprestimo);
-
-            Console.WriteLine(
-                $"{pessoaEscolhida.Nome} pegou o livro '{livroEscolhido.Nome}' " +
-                $"em {novoEmprestimo.DataEmprestimo} e deve devolver até " +
-                $"{novoEmprestimo.DataLimiteDevolucao}"
-            );
+            Console.WriteLine($"{pessoaEscolhida.Nome} pegou o livro '{livroEscolhido.Nome}' em {novoEmprestimo.DataEmprestimo} e deve devolver até {novoEmprestimo.DataLimiteDevolucao}");
 
             livroEscolhido.QuantidadeEstoque--;
         }
@@ -61,13 +56,10 @@ namespace Biblioteca
         {
             Livro livroDevolvido = livros.Find(l => l.Nome == nomeLivro);
 
-            Emprestimo emprestimo = emprestimosAtivos.FirstOrDefault(e => e.Pessoa.Nome == nomePessoa && 
-                                                                          e.Livro.Nome == nomeLivro);
+            Emprestimo emprestimo = emprestimosAtivos.FirstOrDefault(e => e.Pessoa.Nome == nomePessoa && e.Livro.Nome == nomeLivro);
             if (emprestimo == null)
             {
-                Console.WriteLine(
-                    $"Não encontramos um empréstimo ativo de {nomeLivro} para {nomePessoa}."
-                );
+                Console.WriteLine($"Não encontramos um empréstimo ativo de {nomeLivro} para {nomePessoa}.");
                 return;
             }
 
@@ -75,9 +67,7 @@ namespace Biblioteca
 
             if (emprestimo.Multa > 0)
             {
-                Console.WriteLine(
-                    $"Livro '{nomeLivro}' foi devolvido com atraso. " +
-                    $"Multa aplicada: {emprestimo.Multa:C}");
+                Console.WriteLine($"Livro '{nomeLivro}' foi devolvido com atraso. Multa aplicada: {emprestimo.Multa:C}");
             }
             else
             {
