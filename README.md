@@ -1,41 +1,37 @@
 # Projeto Biblioteca
 
 ## Descrição
-O Projeto Biblioteca foi desenvolvido com o objetivo de modelar o sistema básico de uma biblioteca, onde é possível gerenciar empréstimos, livros e usuários (pessoas).
+Este projeto modela o sistema de uma biblioteca, abrangendo empréstimos, livros e usuários (pessoas).
 
-## Estrutura
+## Classes e Estruturas
 
-### 1. Classe `Livro`
-- **Atributos**:
-  - `titulo`: Título do livro.
-  - `autor`: Nome do autor do livro.
-  - `anoPublicacao`: Ano em que o livro foi publicado.
+### 1. `Emprestimo`
+ 
+**Atributos**:
+- `DataEmprestimo`: Data em que o empréstimo foi realizado.
+- `DataDevolucao`: Data em que o livro foi devolvido.
+- `DataLimiteDevolucao`: Data limite para a devolução do livro sem multa.
+- `Multa`: Valor da multa por atraso na devolução.
+- `Pessoa`: Referência ao usuário que realizou o empréstimo.
+- `Livro`: Referência ao livro que foi emprestado.
 
-- **Construtor**:
-  - Recebe e inicializa os atributos mencionados.
+### 2. `Livro`
 
-### 2. Classe `Pessoa`
-- **Atributos**:
-  - `nome`: Nome completo da pessoa.
-  - `dataNascimento`: Data de nascimento da pessoa.
-  - `endereco`: Endereço residencial.
-  - `email`: E-mail de contato.
-  - `telefone`: Número de telefone.
+**Atributos**:
+- `Nome`: Título do livro.
+- `Autor`: Autor do livro.
+- `Genero`: Gênero literário do livro.
+- `AnoPublicacao`: Ano em que o livro foi publicado.
+- `QuantidadeEstoque`: Quantidade de cópias disponíveis do livro no estoque.
 
-- **Construtor**:
-  - Recebe e inicializa os atributos mencionados.
+### 3. `Pessoa`
 
-### 3. Classe `Emprestimo`
-- **Atributos**:
-  - `livro`: Objeto da classe `Livro` que foi emprestado.
-  - `pessoa`: Objeto da classe `Pessoa` que realizou o empréstimo.
-  - `dataEmprestimo`: Data em que o empréstimo foi realizado.
-  - `dataDevolucao`: Data prevista para a devolução do livro.
+**Atributos**:
+- `Nome`: Nome completo da pessoa.
+- `DataNascimento`: Data de nascimento da pessoa.
+- `Endereco`: Endereço residencial da pessoa.
+- `Telefone`: Número de telefone da pessoa.
 
-- **Construtor**:
-  - Recebe e inicializa os atributos mencionados.
-  - 
 ## Utilização
-1. Crie instâncias para livros e pessoas.
-2. Realize empréstimos associando um livro a uma pessoa e definindo as datas pertinentes.
-
+1. Crie instâncias para `Livro` e `Pessoa`.
+2. Associe um `Livro` a uma `Pessoa` ao criar uma instância de `Emprestimo`, definindo as datas de empréstimo, devolução e limite de devolução.
